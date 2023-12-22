@@ -1,0 +1,42 @@
+
+{% extends 'Base/home.html' %}
+{% load static %}
+
+{% block content %}
+
+<br>
+<br>
+
+
+    <div class="container">
+       <h2 class="text-center text-dark">
+           Acerca de mí
+       </h2>
+       <br>
+       <div class="row g-4">
+           <div class="col-md-6 col-lg-3">
+               <div class="card bg-success">
+                    <div class="card-body text-center">
+                        <img src="{% static 'imagenes/Fotomia.jpg' %}" class="rounded-circle mb-3" width="150px">
+                    <h3 class="card-title mb-3">Agustín Vago</h3>
+                    <p class="card-text">Abogado especialista en derecho privado</p>
+                    </div>
+               </div>
+           </div>
+           <div class="col">
+            <div class="">
+                 <div class="text-center">
+                    <p>Graduado hace dos semanas de la Universidad de Buenos Aires. Decidi hace un tiempo que de cara a migrar sería muy util incorporar conocimientos de programacion. Python y Django son solo los dos primeros de todos los conocimientos que espero adquirir a futuro gracias a CoderHouse.</p>
+                 </div>
+            </div>
+        </div>
+       </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+
+{% endblock %}

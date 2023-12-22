@@ -1,0 +1,41 @@
+{% extends 'Base/home.html' %}
+
+{% block content %}
+
+<br>
+<br>
+
+<div class="container">
+
+<p><h4>{{guitarra.titulo}}</h4></p>
+
+{% if guitarra.imagenBlog %}
+    <p><img src="{{guitarra.imagenBlog.url}}" alt=""></p>
+{% endif %}
+<p>Subtitulo: {{guitarra.subtitulo}}</p>
+<p>Descripción: {{guitarra.descripcion}}</p>
+<p>Autor: {{guitarra.autor}}</p>
+<p>Dirección: {{guitarra.direccion}}</p>
+<p>Año: {{guitarra.year}}</p>
+
+</div>
+<br>
+<div class="container">
+    <h4>Comentarios...</h4>
+    <br>
+    <div class="container">
+    {% if not guitarra.comentarios.all %}
+        No han comentado este instrumento
+    {% else %}
+        {% for comentario in guitarra.comentarios.all %}
+        <p><strong>{{comentario.nombre}}</strong></p>
+        <p>{{comentario.mensaje}}</p>
+        <p><small>{{comentario.fechaComentario}}</small></p>
+        <hr>
+        {% endfor %}
+    {% endif %}
+    <a href="{% url 'comentario' guitarra.pk %}">Agrega un Comentario</a>
+    </div>
+</div>
+<br>
+{% endblock %}
